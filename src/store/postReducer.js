@@ -1,4 +1,4 @@
-import { SET_POST_LIST } from "./types";
+import { SET_POST_LIST } from "./actionTypes";
 
 export const initailState = {
   postList: [],
@@ -12,7 +12,7 @@ export const setPostList = (postList) => ({
 export const postReducer = (state = initailState, action) => {
   switch (action.type) {
     case SET_POST_LIST:
-      return { ...state, postList: action.payload };
+      return { ...state, postList: [...state.postList, ...action.payload] };
     default:
       return state;
   }
