@@ -1,4 +1,4 @@
-import { SET_POST_LIST } from "./types";
+import { SET_POST_LIST } from "./actionTypes";
 
 export const initailState = {
   postList: [],
