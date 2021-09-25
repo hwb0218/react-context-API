@@ -2,13 +2,17 @@ import React from "react";
 import styled from "styled-components";
 
 const Card = ({ postData }) => {
-  return <CardItem>{postData.id}</CardItem>;
+  return (
+    <CardItem>
+      <Title>{postData.title}</Title>
+      <Body>{postData.body}</Body>
+    </CardItem>
+  );
 };
 
 export default Card;
 
 const CardItem = styled.div`
-  display: inline-block;
   max-width: 500px;
   width: 100%;
   padding: 20px;
@@ -19,4 +23,12 @@ const CardItem = styled.div`
   & + & {
     margin-top: 14px;
   }
+`;
+
+const Title = styled.div`
+  font-weight: bold;
+`;
+
+const Body = styled.div`
+  margin-top: 8px;
 `;
